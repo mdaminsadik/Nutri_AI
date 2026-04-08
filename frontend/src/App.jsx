@@ -1,53 +1,91 @@
-import Signup from "./componentt/signup/signup";
-import Login from "./component2/Login";
-import Design from "./Design";
 
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import Home from "./componentt/signup/Home";
+// import Auth from "./component3/Auth";
+// import Login from "./component2/Login";
+// import Signup from "./component3/Signup";
+// import MainDashboard from "./component4/MainDashboard";
+// import HealthDataIntegration from "./component4/HealthDataIntegration";
+// import Gamification from "./component4/Gamification";
+// import HealthCommunity from "./component4/Healthcommunity";
+// import AdaptiveTracking from "./component4/AdaptiveTracking";
+// import FoodScanner from "./component4/FoodScanner";
+// // import MealPlan from "./component4/MealPlan";
+// const App = () => {
+//   return (
+//     <Router>
+//       <Routes>
+//         {/* Home page */}
+//         <Route path="/" element={<Home />} />
+
+//         {/* Auth page after clicking Get Started */}
+//         <Route path="/auth" element={<Auth />} />
+
+//         {/* Login & Signup routes */}
+//         <Route path="/login" element={<Login />} />
+//         <Route path="/signup" element={<Signup />} />
+
+//         {/* Main Dashboard after login */}
+       
+//         <Route path="/dashboard" element={<MainDashboard />} />
+//  <Route path="/health-integration" element={<HealthDataIntegration />} />
+//    <Route path="/gamification" element={<Gamification />} />
+// <Route path="/community" element={<HealthCommunity />} />
+//  <Route path="/tracking" element={<AdaptiveTracking />} />
+//   {/* <Route path="/meal-plans" element={<MealPlan />} /> */}
+//   {/* <Route
+//   path="/food-scanner"
+//   element={userData?<FoodScanner userData={userData} /> : <Navigate to="/signup" />}
+// /> */}
+// <Route path="/food-scanner" element={<FoodScanner />} />
+
+//       </Routes>
+//     </Router>
+//   );
+// };
+
+// export default App;
+
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import Home from "./componentt/signup/Home";
+import Auth from "./component3/Auth";
+import Login from "./component2/Login";
+import Signup from "./component3/Signup";
+
+import MainDashboard from "./component4/MainDashboard";
+import HealthDataIntegration from "./component4/HealthDataIntegration";
+import Gamification from "./component4/Gamification";
+import HealthCommunity from "./component4/Healthcommunity";
+import AdaptiveTracking from "./component4/AdaptiveTracking";
+import FoodScanner from "./component4/FoodScanner";
+import PersonalizedMealPlan from "./component4/PersonalizedMealPlan";
 
 const App = () => {
   return (
     <Router>
-      <nav className="bg-orange-600 text-white px-6 py-4 shadow-md flex justify-between items-center">
-        <div className="text-2xl font-extrabold tracking-wide">Fooder</div>
-        <div className="space-x-6">
-          <Link
-            className="hover:text-orange-200 transition-colors font-medium"
-            to="/login"
-          >
-            Login
-          </Link>
-          <Link
-            className="hover:text-orange-200 transition-colors font-medium"
-            to="/signup"
-          >
-            Signup
-          </Link>
-        </div>
-      </nav>
+      <Routes>
+        {/* Public pages */}
+        <Route path="/" element={<Home />} />
+        <Route path="/auth" element={<Auth />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
 
-      <div className="bg-gray-50 min-h-screen py-8">
-        {/* <img src="/food1.jpg" alt="food" className="absolute inset-0 w-full h-100vh object-cover opacity-20 z-0 "></img> */}
-        <img src="/food2.jpg" alt="food" className="absolute top-20 left-4 w-54 h-54 object-cover rounded-lg shadow-lg" />
-        <img src="/food3.jpg" alt="food" className="absolute top-20 right-4 w-54 h-54 object-cover rounded-lg shadow-lg" />
-        <img src="/food4.webp" alt="food" className="absolute bottom-4 left-4 w-54 h-54 object-cover rounded-lg shadow-lg" />
-        <img src="/food5.jpg" alt="food" className="absolute bottom-4 right-4 w-54 h-54 object-cover rounded-lg shadow-lg" />
+        {/* Dashboard pages */}
+        <Route path="/dashboard" element={<MainDashboard />} />
+        <Route path="/health-integration" element={<HealthDataIntegration />} />
+        <Route path="/gamification" element={<Gamification />} />
+        <Route path="/community" element={<HealthCommunity />} />
+        <Route path="/tracking" element={<AdaptiveTracking />} />
+        <Route path="/food-scanner" element={<FoodScanner />} />
 
-
-
-
-        <div className="max-w-md mx-auto bg-white rounded-lg shadow p-6">
-
-          <Routes>
-            <Route path="/" element={<Signup />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-          </Routes>
-          <design></design>
-        </div>
-      </div>
+        {/* ✅ Personalized Meal Plan */}
+        <Route path="/meal-plans" element={<PersonalizedMealPlan />} />
+      </Routes>
     </Router>
   );
 };
 
 export default App;
-

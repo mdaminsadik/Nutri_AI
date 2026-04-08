@@ -8,7 +8,7 @@ mongoose.connect("mongodb://localhost:27017/").then(() => {
   console.log("Connected to Data Base");
 });
 
-const User = require("./model/User");
+const User = require("./model/user");
 const app = express();
 
 const port = 3000;
